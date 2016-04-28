@@ -33,14 +33,14 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
     /**
      *
      * @param usuario
-     * @param clave
+     * @param password
      * @return
      */
     @Override
-    public List<Usuario> findByLogin(String usuario, String clave) {
-       return em.createQuery("Select u FROM Usuario u WHERE u.usuario = :u and u.clave = :k")
+    public List<Usuario> findByLogin(String usuario, String password) {
+       return em.createQuery("Select u FROM Usuario u WHERE u.usuario = :u and u.password = :k")
                 .setParameter("u", usuario)
-                .setParameter("k", clave)
+                .setParameter("k", password)
                 .getResultList();
     }
 

@@ -43,20 +43,20 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String nombre;
-        String clave;
+        String password;
         try{
             //coger datos del formulario
             Usuario usuarioA = (Usuario) session.getAttribute("Usuario");
             nombre = usuarioA.getUsuario();
-            clave = usuarioA.getPassword();
+            password = usuarioA.getPassword();
     
         }catch(Exception e){
             nombre = request.getParameter("usuario");
-            clave = request.getParameter("clave");
+            password = request.getParameter("password");
         }
         
         nombre = nombre.trim();
-        List<Usuario> lista = usuarioFacade.findByLogin(nombre, clave);
+        List<Usuario> lista = usuarioFacade.findByLogin(nombre, password);
         RequestDispatcher rd;
         
         if (lista.isEmpty()) {

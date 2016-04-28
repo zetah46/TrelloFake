@@ -23,6 +23,7 @@
         <meta charset = 'utf-8'>
     </head>
     <body>
+        <h2>Iniciar Sesión en Trello Fake</h2>
         <form name="LoginServlet" action="LoginServlet" method="post">
             <div class="login">
                 <br />Usuario: <input name="usuario" type="text" value="" onclick="if (this.value == 'Usuario')
